@@ -1,6 +1,10 @@
 package com.webex.cws.sample.aws;
 
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
+import com.amazonaws.services.ec2.AmazonEC2ClientBuilder;
 import com.amazonaws.services.ec2.model.*;
 
 /**
@@ -11,6 +15,10 @@ public class AwsSample {
     public static void main(String[] args){
 
         AmazonEC2Client amazonEC2Client = new AmazonEC2Client();
+
+        //BasicAWSCredentials awsCreds = new BasicAWSCredentials("access_key_id", "secret_key_id");
+        //AmazonEC2 amazonEC2 = AmazonEC2ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCreds)).build();
+
         String keyName = "my-aws-ec2-keypair";
         String groupName = "my-security-group";
 
